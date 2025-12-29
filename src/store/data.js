@@ -3,7 +3,7 @@ export const BRANDS = [
     id: 'mahindra', 
     name: 'Mahindra', 
     color: 'red',
-    logo: 'https://logo.clearbit.com/mahindra.com',
+    logo: 'https://companieslogo.com/img/orig/M_M.NS_BIG-03046522.png?t=1661330366',
     domain: 'mahindra.com'
   },
   { 
@@ -17,14 +17,14 @@ export const BRANDS = [
     id: 'sonalika', 
     name: 'Sonalika', 
     color: 'blue-dark',
-    logo: 'https://logo.clearbit.com/sonalika.com',
+    logo: 'https://companieslogo.com/img/orig/SONAL.NS-8772a159.png?t=1720244494',
     domain: 'sonalika.com'
   },
   { 
     id: 'johndeere', 
     name: 'John Deere', 
     color: 'green',
-    logo: 'https://logo.clearbit.com/deere.com',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/John_Deere_logo.svg',
     domain: 'deere.com'
   },
   { 
@@ -52,14 +52,14 @@ export const BRANDS = [
     id: 'farmtrac', 
     name: 'Farmtrac', 
     color: 'blue-light',
-    logo: 'https://logo.clearbit.com/farmtrac.com',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Farmtrac_Tractors_Europe.svg',
     domain: 'farmtrac.com'
   },
   { 
     id: 'newholland', 
     name: 'New Holland', 
     color: 'blue',
-    logo: 'https://logo.clearbit.com/agriculture.newholland.com',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/New_Holland_Agriculture_Logo.svg',
     domain: 'newholland.com'
   },
   { 
@@ -73,7 +73,7 @@ export const BRANDS = [
     id: 'massey',
     name: 'Massey Ferguson',
     color: 'red',
-    logo: 'https://logo.clearbit.com/masseyferguson.com',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Massey_Ferguson_logo.svg',
     domain: 'masseyferguson.com'
   },
   {
@@ -113,9 +113,9 @@ export const BRANDS = [
   },
   {
     id: 'universal',
-    name: 'Universal/Other',
+    name: 'UTB/Universal',
     color: 'gray',
-    logo: 'https://placehold.co/200x100?text=Universal',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/UTB_Universal_logo.jpg',
     domain: 'google.com'
   }
 ]
