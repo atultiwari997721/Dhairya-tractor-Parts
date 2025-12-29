@@ -19,6 +19,21 @@ export default function Home() {
       window.open(`https://wa.me/917509176392?text=${encodeURIComponent(message)}`, '_blank')
   }
 
+const getBrandHoverClass = (color) => {
+    const map = {
+      'red': 'hover:shadow-red-500/50 hover:border-red-500',
+      'blue': 'hover:shadow-blue-500/50 hover:border-blue-500',
+      'blue-dark': 'hover:shadow-blue-900/50 hover:border-blue-900',
+      'green': 'hover:shadow-green-500/50 hover:border-green-500',
+      'orange': 'hover:shadow-orange-500/50 hover:border-orange-500',
+      'orange-dark': 'hover:shadow-orange-700/50 hover:border-orange-700',
+      'blue-light': 'hover:shadow-sky-400/50 hover:border-sky-400',
+      'green-light': 'hover:shadow-lime-500/50 hover:border-lime-500',
+      'gray': 'hover:shadow-gray-500/50 hover:border-gray-500',
+    }
+    return map[color] || 'hover:shadow-red-900/20'
+  }
+
   return (
     <div className="bg-black min-h-screen text-white">
       {/* HERO SECTION */}
@@ -119,7 +134,7 @@ export default function Home() {
               <Link to={`/catalog?brand=${brand.id}`} key={brand.id} className="contents">
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
-                  className="h-32 rounded-xl bg-white flex items-center justify-center p-4 cursor-pointer shadow-lg hover:shadow-red-900/20 transition-all group overflow-hidden"
+                  className={`h-32 rounded-xl bg-white flex items-center justify-center p-4 cursor-pointer shadow-lg transition-all group overflow-hidden border-2 border-transparent ${getBrandHoverClass(brand.color)}`}
                 >
                   <img 
                     src={brand.logo} 
