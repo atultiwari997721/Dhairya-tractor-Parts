@@ -129,12 +129,12 @@ const getBrandHoverClass = (color) => {
             <a href="/catalog" className="text-red-500 hover:text-red-400 flex items-center gap-1">View All <ArrowRight size={16} /></a>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-6">
             {BRANDS.map((brand) => (
               <Link to={`/catalog?brand=${brand.id}`} key={brand.id} className="contents">
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
-                  className={`h-32 rounded-xl bg-white flex items-center justify-center p-4 cursor-pointer shadow-lg transition-all group overflow-hidden border-2 border-transparent ${getBrandHoverClass(brand.color)}`}
+                  className={`h-20 md:h-32 rounded-xl bg-white flex items-center justify-center p-2 md:p-4 cursor-pointer shadow-lg transition-all group overflow-hidden border-2 border-transparent ${getBrandHoverClass(brand.color)}`}
                 >
                   <img 
                     src={brand.logo} 
@@ -155,14 +155,14 @@ const getBrandHoverClass = (color) => {
 
       {/* FEATURES / WHY CHOOSE US */}
       <section className="py-20 bg-black">
-        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <div className="p-8 border border-white/10 rounded-2xl bg-zinc-900/50">
-            <h3 className="text-2xl font-bold mb-4 text-white">Genuine Quality</h3>
-            <p className="text-gray-400">We source directly from manufacturers to ensure every piston, clutch, and filter is authentic.</p>
+        <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-12 items-center">
+          <div className="p-4 md:p-8 border border-white/10 rounded-2xl bg-zinc-900/50">
+            <h3 className="text-sm md:text-2xl font-bold mb-2 md:mb-4 text-white">Genuine Quality</h3>
+            <p className="text-xs md:text-base text-gray-400">We source directly from manufacturers to ensure every piston, clutch, and filter is authentic.</p>
           </div>
-          <div className="p-8 border border-white/10 rounded-2xl bg-zinc-900/50">
-            <h3 className="text-2xl font-bold mb-4 text-white">Fast Delivery</h3>
-            <p className="text-gray-400">Order via WhatsApp and get express shipping across India within 3-5 working days.</p>
+          <div className="p-4 md:p-8 border border-white/10 rounded-2xl bg-zinc-900/50">
+            <h3 className="text-sm md:text-2xl font-bold mb-2 md:mb-4 text-white">Fast Delivery</h3>
+            <p className="text-xs md:text-base text-gray-400">Order via WhatsApp and get express shipping across India within 3-5 working days.</p>
           </div>
         </div>
       </section>
