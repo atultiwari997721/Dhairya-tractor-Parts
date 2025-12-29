@@ -24,7 +24,7 @@ export default function Navbar() {
           <Link to="/admin" className="hover:text-red-500 transition-colors">ADMIN</Link>
           
           <a 
-            href="https://wa.me/919999999999?text=Hi,%20I%20want%20to%20order%20tractor%20parts" 
+            href="https://wa.me/917509176392?text=Hi,%20I%20want%20to%20order%20tractor%20parts" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-red-900/50 flex items-center gap-2"

@@ -40,7 +40,7 @@ export default function Catalog() {
 
   const handleOrder = (product) => {
     const message = `Hi, I am interested in buying *${product.name}* for *${product.model}* (Brand: ${product.brand}). Price: ₹${product.price}`
-    window.open(`https://wa.me/919999999999?text=${encodeURIComponent(message)}`, '_blank')
+    window.open(`https://wa.me/917509176392?text=${encodeURIComponent(message)}`, '_blank')
   }
 
   return (

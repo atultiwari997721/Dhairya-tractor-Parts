@@ -18,7 +18,7 @@ export function ProductProvider({ children }) {
   const [shopDetails, setShopDetails] = useState(() => {
     const saved = localStorage.getItem('dhairya_shop_details')
     return saved ? JSON.parse(saved) : {
-      phone: '+91 99999 99999',
+      phone: '+91 75091 76392',
       email: 'contact@dhairya.com', 
       location: 'Jabalpur, MP, India',
       latitude: '23.1815',

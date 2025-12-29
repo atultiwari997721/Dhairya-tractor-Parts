@@ -16,7 +16,7 @@ export default function Home() {
 
   const handleOrder = (product) => {
       const message = `Hi, I am interested in buying *${product.name}* for *${product.model}* (Brand: ${product.brand}). Price: ₹${product.price}`
-      window.open(`https://wa.me/919999999999?text=${encodeURIComponent(message)}`, '_blank')
+      window.open(`https://wa.me/917509176392?text=${encodeURIComponent(message)}`, '_blank')
   }
 
   return (
@@ -50,7 +50,7 @@ export default function Home() {
               <Link to="/catalog" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all">
                 BROWSE PARTS <ArrowRight size={20} />
               </Link>
-              <a href="https://wa.me/" className="border border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold transition-all">
+              <a href="https://wa.me/917509176392" className="border border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold transition-all">
                 WHATSAPP US
               </a>
             </div>
