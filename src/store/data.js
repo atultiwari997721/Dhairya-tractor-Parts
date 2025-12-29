@@ -17,7 +17,7 @@ export const BRANDS = [
     id: 'sonalika', 
     name: 'Sonalika', 
     color: 'blue-dark',
-    logo: 'https://companieslogo.com/img/orig/SONAL.NS-8772a159.png?t=1720244494',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/SONALIKA_LOGO_hd.jpg',
     domain: 'sonalika.com'
   },
   { 
@@ -45,7 +45,7 @@ export const BRANDS = [
     id: 'powertrac', 
     name: 'Powertrac', 
     color: 'blue',
-    logo: 'https://seeklogo.com/images/P/powertrac-logo-1C97F3E229-seeklogo.com.png',
+    logo: 'https://www.escortskubota.com/assets/images/Powertrac-logo.png',
     domain: 'escorts.com'
   },
   { 
@@ -101,14 +101,14 @@ export const BRANDS = [
     id: 'ace',
     name: 'ACE',
     color: 'orange',
-    logo: 'https://seeklogo.com/images/A/ACE-logo-8A1901B372-seeklogo.com.png',
+    logo: 'https://www.ace-cranes.com/wps/wcm/connect/ace-cranes/8573fc9a-14d2-43bb-a5a0-972172023594/ACE+Logo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_28021240MOID90Q7J28I5O0000-8573fc9a-14d2-43bb-a5a0-972172023594-l7y.x1',
     domain: 'ace-cranes.com'
   },
   {
     id: 'vst',
     name: 'VST Shakti',
     color: 'red',
-    logo: 'https://seeklogo.com/images/V/v-s-t-tillers-tractors-ltd-logo-8D3E64A57F-seeklogo.com.png',
+    logo: 'https://companieslogo.com/img/orig/VSTTILLERS.NS-023a1a3d.png?t=1720244494',
     domain: 'vsttractors.com'
   },
   {
