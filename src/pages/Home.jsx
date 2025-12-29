@@ -145,7 +145,7 @@ const getBrandHoverClass = (color) => {
                       e.target.nextSibling.style.display = 'block';
                     }}
                   />
-                  <span className="hidden text-black font-bold text-lg">{brand.name}</span>
+                  <span className="hidden text-black font-bold text-[10px] md:text-base text-center leading-tight px-1 break-words w-full">{brand.name}</span>
                 </motion.div>
               </Link>
             ))}
