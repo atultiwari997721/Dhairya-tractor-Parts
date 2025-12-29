@@ -28,11 +28,25 @@ export const BRANDS = [
     domain: 'deere.com'
   },
   { 
-    id: 'eicher', 
-    name: 'Eicher', 
-    color: 'red-dark',
-    logo: 'https://eichertractors.in/images/header-footer/eicher-logo.jpg',
-    domain: 'eichertractors.in'
+    id: 'tafe', 
+    name: 'TAFE', 
+    color: 'orange',
+    logo: 'https://companieslogo.com/img/orig/TAFE.NS-b9492167.png?t=1720244494',
+    domain: 'tafe.com'
+  },
+  { 
+    id: 'kubota', 
+    name: 'Kubota', 
+    color: 'orange-dark',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Kubota_logo.svg',
+    domain: 'kubota.com'
+  },
+   { 
+    id: 'powertrac', 
+    name: 'Powertrac', 
+    color: 'blue',
+    logo: 'https://seeklogo.com/images/P/powertrac-logo-1C97F3E229-seeklogo.com.png',
+    domain: 'escorts.com'
   },
   { 
     id: 'farmtrac', 
@@ -40,6 +54,20 @@ export const BRANDS = [
     color: 'blue-light',
     logo: 'https://logo.clearbit.com/farmtrac.com',
     domain: 'farmtrac.com'
+  },
+  { 
+    id: 'newholland', 
+    name: 'New Holland', 
+    color: 'blue',
+    logo: 'https://logo.clearbit.com/agriculture.newholland.com',
+    domain: 'newholland.com'
+  },
+  { 
+    id: 'eicher', 
+    name: 'Eicher', 
+    color: 'red-dark',
+    logo: 'https://eichertractors.in/images/header-footer/eicher-logo.jpg',
+    domain: 'eichertractors.in'
   },
   {
     id: 'massey',
@@ -49,11 +77,39 @@ export const BRANDS = [
     domain: 'masseyferguson.com'
   },
   {
-    id: 'newholland',
-    name: 'New Holland',
+    id: 'solis',
+    name: 'Solis',
     color: 'blue',
-    logo: 'https://logo.clearbit.com/agriculture.newholland.com',
-    domain: 'newholland.com'
+    logo: 'https://seeklogo.com/images/S/solis-yanmar-logo-2EB5A71358-seeklogo.com.png',
+    domain: 'solis-world.com'
+  },
+   {
+    id: 'preet',
+    name: 'Preet',
+    color: 'green',
+    logo: 'https://preet.co/wp-content/uploads/2021/08/logo-color.png',
+    domain: 'preet.co'
+  },
+  {
+    id: 'indo-farm',
+    name: 'Indo Farm',
+    color: 'green-light',
+    logo: 'https://www.indofarm.in/images/logo.png',
+    domain: 'indofarm.in'
+  },
+  {
+    id: 'ace',
+    name: 'ACE',
+    color: 'orange',
+    logo: 'https://seeklogo.com/images/A/ACE-logo-8A1901B372-seeklogo.com.png',
+    domain: 'ace-cranes.com'
+  },
+  {
+    id: 'vst',
+    name: 'VST Shakti',
+    color: 'red',
+    logo: 'https://seeklogo.com/images/V/v-s-t-tillers-tractors-ltd-logo-8D3E64A57F-seeklogo.com.png',
+    domain: 'vsttractors.com'
   },
   {
     id: 'universal',

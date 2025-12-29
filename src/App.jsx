@@ -7,10 +7,13 @@ import Admin from './pages/Admin'
 
 import { ProductProvider } from './store/ProductContext'
 
+import ScrollToTop from './components/ScrollToTop'
+
 function App() {
   return (
     <ProductProvider>
       <BrowserRouter>
+         <ScrollToTop />
          <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-red-500 selection:text-white">
             <Navbar />
             <main className="flex-grow">
