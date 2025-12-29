@@ -81,7 +81,7 @@ const getBrandHoverClass = (color) => {
             <Link to="/catalog" className="text-gray-400 hover:text-white flex items-center gap-1">View Full Catalog <ArrowRight size={16} /></Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {featuredProducts.map(product => (
               <motion.div 
                 key={product.id}
@@ -91,27 +91,27 @@ const getBrandHoverClass = (color) => {
                 whileHover={{ y: -5 }}
                 className="bg-black border border-zinc-800 rounded-xl overflow-hidden hover:border-red-500/50 transition-all shadow-lg group"
               >
-                <div className="h-48 overflow-hidden relative">
+                <div className="h-32 md:h-48 overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
                   <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <span className="absolute bottom-2 left-2 z-20 bg-red-600 text-white text-xs px-2 py-1 rounded-md font-bold uppercase">
+                  <span className="absolute bottom-2 left-2 z-20 bg-red-600 text-white text-[10px] md:text-xs px-1.5 py-0.5 rounded-md font-bold uppercase">
                     {BRANDS.find(b => b.id === product.brand)?.name || product.brand}
                   </span>
                 </div>
                 
-                <div className="p-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-bold text-lg leading-tight text-white mb-1 line-clamp-1">{product.name}</h3>
+                <div className="p-3 md:p-4">
+                  <div className="flex justify-between items-start mb-1 md:mb-2">
+                    <h3 className="font-bold text-sm md:text-lg leading-tight text-white line-clamp-2">{product.name}</h3>
                   </div>
-                  <p className="text-sm text-gray-400 mb-2">Fits: <span className="text-gray-200">{product.model}</span></p>
+                  <p className="text-xs md:text-sm text-gray-400 mb-2">Fits: <span className="text-gray-200">{product.model}</span></p>
                   
-                  <div className="flex items-center justify-between mt-4">
-                    <span className="text-xl font-bold text-yellow-400">₹{product.price}</span>
+                  <div className="flex items-center justify-between mt-2 md:mt-4">
+                    <span className="text-sm md:text-xl font-bold text-yellow-400">₹{product.price}</span>
                     <button 
                       onClick={() => handleOrder(product)}
-                      className="bg-zinc-800 hover:bg-green-600 text-white p-2 rounded-lg transition-colors"
+                      className="bg-zinc-800 hover:bg-green-600 text-white p-1.5 md:p-2 rounded-lg transition-colors"
                     >
-                      <ShoppingCart size={18} />
+                      <ShoppingCart size={16} />
                     </button>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ const getBrandHoverClass = (color) => {
               <Link to={`/catalog?brand=${brand.id}`} key={brand.id} className="contents">
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
-                  className={`h-20 md:h-32 rounded-xl bg-white flex items-center justify-center p-2 md:p-4 cursor-pointer shadow-lg transition-all group overflow-hidden border-2 border-transparent ${getBrandHoverClass(brand.color)}`}
+                  className={`aspect-square rounded-lg bg-white flex items-center justify-center p-2 cursor-pointer shadow-lg transition-all group overflow-hidden border border-transparent ${getBrandHoverClass(brand.color)}`}
                 >
                   <img 
                     src={brand.logo} 
