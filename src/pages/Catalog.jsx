@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { useProducts } from '../store/ProductContext'
 import { BRANDS } from '../store/data'
 import { Search, Filter, ShoppingCart } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 
 const ALL_Category = 'All'
 
@@ -11,6 +12,16 @@ export default function Catalog() {
   const [selectedBrand, setSelectedBrand] = useState('All')
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [searchTerm, setSearchTerm] = useState('')
+  const location = useLocation()
+
+  // Handle URL Query Params
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const brandParam = params.get('brand')
+    if (brandParam) {
+        setSelectedBrand(brandParam)
+    }
+  }, [location.search])
 
   // Derive categories from products
   const categories = useMemo(() => {

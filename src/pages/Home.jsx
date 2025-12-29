@@ -116,22 +116,23 @@ export default function Home() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {BRANDS.map((brand) => (
-              <motion.div 
-                key={brand.id}
-                whileHover={{ scale: 1.05 }}
-                className="h-32 rounded-xl bg-white flex items-center justify-center p-4 cursor-pointer shadow-lg hover:shadow-red-900/20 transition-all group overflow-hidden"
-              >
-                <img 
-                  src={brand.logo} 
-                  alt={`${brand.name} Logo`} 
-                  className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'block';
-                  }}
-                />
-                <span className="hidden text-black font-bold text-lg">{brand.name}</span>
-              </motion.div>
+              <Link to={`/catalog?brand=${brand.id}`} key={brand.id} className="contents">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="h-32 rounded-xl bg-white flex items-center justify-center p-4 cursor-pointer shadow-lg hover:shadow-red-900/20 transition-all group overflow-hidden"
+                >
+                  <img 
+                    src={brand.logo} 
+                    alt={`${brand.name} Logo`} 
+                    className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'block';
+                    }}
+                  />
+                  <span className="hidden text-black font-bold text-lg">{brand.name}</span>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
