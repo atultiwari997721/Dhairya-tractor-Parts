@@ -34,14 +34,14 @@ export const BRANDS = [
     logo: 'https://companieslogo.com/img/orig/TAFE.NS-b9492167.png?t=1720244494',
     domain: 'tafe.com'
   },
-  { 
-    id: 'kubota', 
-    name: 'Kubota', 
-    color: 'orange-dark',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Kubota_logo.svg',
-    domain: 'kubota.com'
+  {
+    id: 'massey',
+    name: 'Massey Ferguson',
+    color: 'red',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Massey_Ferguson_logo.svg',
+    domain: 'masseyferguson.com'
   },
-   { 
+  { 
     id: 'powertrac', 
     name: 'Powertrac', 
     color: 'blue',
@@ -63,18 +63,18 @@ export const BRANDS = [
     domain: 'newholland.com'
   },
   { 
+    id: 'kubota', 
+    name: 'Kubota', 
+    color: 'orange-dark',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Kubota_logo.svg',
+    domain: 'kubota.com'
+  },
+  { 
     id: 'eicher', 
     name: 'Eicher', 
     color: 'red-dark',
     logo: 'https://eichertractors.in/images/header-footer/eicher-logo.jpg',
     domain: 'eichertractors.in'
-  },
-  {
-    id: 'massey',
-    name: 'Massey Ferguson',
-    color: 'red',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Massey_Ferguson_logo.svg',
-    domain: 'masseyferguson.com'
   },
   {
     id: 'solis',
@@ -112,11 +112,32 @@ export const BRANDS = [
     domain: 'vsttractors.com'
   },
   {
-    id: 'universal',
-    name: 'UTB/Universal',
+    id: 'force',
+    name: 'Force Motors',
     color: 'gray',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/UTB_Universal_logo.jpg',
-    domain: 'google.com'
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Force_Motors_Logo.svg',
+    domain: 'forcemotors.com'
+  },
+  {
+    id: 'captain',
+    name: 'Captain',
+    color: 'green',
+    logo: 'https://www.captaintractors.com/assets/images/logo.png',
+    domain: 'captaintractors.com'
+  },
+  {
+    id: 'claas',
+    name: 'Claas',
+    color: 'green-light',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Claas-logo-red.svg',
+    domain: 'claas.com'
+  },
+  {
+    id: 'kartar',
+    name: 'Kartar',
+    color: 'red',
+    logo: 'https://www.kartaragro.com/images/logo.png',
+    domain: 'kartaragro.com'
   }
 ]
 

@@ -54,7 +54,7 @@ const getBrandHoverClass = (color) => {
               Maihar's Best Shop
             </h2>
             <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-none bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
-              THE POWER OF <br /> FARMING
+              Dhairya Tractor Parts
             </h1>
             <p className="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
               Original parts for Mahindra, Swaraj, John Deere, and more. 
@@ -121,35 +121,48 @@ const getBrandHoverClass = (color) => {
         </div>
       </section>
 
-      {/* BRANDS SECTION */}
-      <section className="py-20 bg-zinc-900 border-t border-zinc-800">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between mb-12">
+      {/* BRANDS SECTION - SLIT FORM (MARQUEE) */}
+      <section className="py-20 bg-zinc-900 border-t border-zinc-800 overflow-hidden">
+        <div className="container mx-auto px-6 mb-12">
+           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-bold">Supported Brands</h2>
             <a href="/catalog" className="text-red-500 hover:text-red-400 flex items-center gap-1">View All <ArrowRight size={16} /></a>
           </div>
+        </div>
           
-          <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-6">
-            {BRANDS.map((brand) => (
-              <Link to={`/catalog?brand=${brand.id}`} key={brand.id} className="contents">
+        <div className="relative w-full flex overflow-hidden mask-linear-gradient">
+          <motion.div 
+            className="flex gap-8 whitespace-nowrap"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 40,
+                ease: "linear",
+              },
+            }}
+          >
+            {[...BRANDS, ...BRANDS].map((brand, index) => (
+              <Link to={`/catalog?brand=${brand.id}`} key={`${brand.id}-${index}`} className="flex-shrink-0">
                 <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  className={`aspect-square rounded-lg bg-white flex items-center justify-center p-2 cursor-pointer shadow-lg transition-all group overflow-hidden border border-transparent ${getBrandHoverClass(brand.color)}`}
+                  whileHover={{ scale: 1.1 }}
+                  className={`w-32 h-32 md:w-40 md:h-40 rounded-full bg-white/5 border border-white/10 flex items-center justify-center p-6 cursor-pointer hover:bg-white/10 transition-all group backdrop-blur-sm ${getBrandHoverClass(brand.color)}`}
                 >
                   <img 
                     src={brand.logo} 
                     alt={`${brand.name} Logo`} 
-                    className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-contain filter grayscale brightness-200 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'block';
                     }}
                   />
-                  <span className="hidden text-black font-bold text-[10px] md:text-base text-center leading-tight px-1 break-words w-full">{brand.name}</span>
+                  <span className="hidden text-white font-bold text-center text-sm md:text-base">{brand.name}</span>
                 </motion.div>
               </Link>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
