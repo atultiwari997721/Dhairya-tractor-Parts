@@ -211,33 +211,43 @@ export default function Admin() {
       <div className="container mx-auto">
         
         {/* HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-          <h1 className="text-3xl font-bold text-white flex items-center gap-2">
-            <ShieldCheck className="text-green-500" /> Admin Dashboard
-          </h1>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            <button 
-              onClick={() => setActiveTab('dashboard')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-all ${activeTab === 'dashboard' ? 'bg-red-600 text-white' : 'bg-zinc-800 text-gray-400 hover:text-white'}`}
-            >
-              <LayoutDashboard size={20} /> Dashboard
-            </button>
-            <button 
-              onClick={() => setActiveTab('inventory')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-all ${activeTab === 'inventory' ? 'bg-red-600 text-white' : 'bg-zinc-800 text-gray-400 hover:text-white'}`}
-            >
-              <Search size={20} /> Inventory
-            </button>
-            <button 
-              onClick={() => setActiveTab('billing')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-all ${activeTab === 'billing' ? 'bg-red-600 text-white' : 'bg-zinc-800 text-gray-400 hover:text-white'}`}
-            >
-              <FileText size={20} /> GST Billing
-            </button>
-            <button onClick={() => setIsAuthenticated(false)} className="text-gray-400 hover:text-white underline ml-4">
+        <div className="relative flex flex-col items-center md:flex-row md:justify-between mb-8 gap-6">
+          <div className="w-full flex justify-between items-center md:w-auto">
+             <h1 className="text-3xl font-bold text-white flex items-center gap-2">
+              <ShieldCheck className="text-green-500" /> Admin Dashboard
+            </h1>
+            {/* Mobile Logout Button (Visible only on small screens in top right relative to header) */}
+            <button onClick={() => setIsAuthenticated(false)} className="md:hidden text-gray-400 hover:text-white underline text-sm">
               Logout
             </button>
+          </div>
+          
+          <div className="w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+             <div className="flex flex-nowrap items-center gap-2 md:gap-4 min-w-max px-1">
+              <button 
+                onClick={() => setActiveTab('dashboard')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-all whitespace-nowrap ${activeTab === 'dashboard' ? 'bg-red-600 text-white' : 'bg-zinc-800 text-gray-400 hover:text-white'}`}
+              >
+                <LayoutDashboard size={20} /> Dashboard
+              </button>
+              <button 
+                onClick={() => setActiveTab('inventory')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-all whitespace-nowrap ${activeTab === 'inventory' ? 'bg-red-600 text-white' : 'bg-zinc-800 text-gray-400 hover:text-white'}`}
+              >
+                <Search size={20} /> Inventory
+              </button>
+              <button 
+                onClick={() => setActiveTab('billing')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-all whitespace-nowrap ${activeTab === 'billing' ? 'bg-red-600 text-white' : 'bg-zinc-800 text-gray-400 hover:text-white'}`}
+              >
+                <FileText size={20} /> GST Billing
+              </button>
+              
+               {/* Desktop Logout Button */}
+              <button onClick={() => setIsAuthenticated(false)} className="hidden md:block text-gray-400 hover:text-white underline ml-4">
+                Logout
+              </button>
+            </div>
           </div>
         </div>
 
@@ -324,7 +334,7 @@ export default function Admin() {
                   <Plus size={20} /> Add New Part
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                      <div>
                       <label className="block text-gray-400 text-xs mb-1">Part Name</label>
                       <input type="text" name="name" value={formData.name} onChange={handleInputChange} required className="w-full bg-black border border-gray-700 rounded p-2 text-white" />
@@ -335,7 +345,7 @@ export default function Admin() {
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-gray-400 text-xs mb-1">Brand</label>
                       <select name="brand" value={formData.brand} onChange={handleInputChange} className="w-full bg-black border border-gray-700 rounded p-2 text-white">
@@ -396,14 +406,14 @@ export default function Admin() {
         {/* --- INVENTORY TAB --- */}
         {activeTab === 'inventory' && (
            <div className="bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden p-6">
-             <div className="flex justify-between items-center mb-6">
+             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                <h2 className="text-xl font-bold text-white">Live Inventory Management</h2>
-               <div className="relative">
+               <div className="relative w-full md:w-auto">
                  <Search className="absolute left-3 top-2.5 text-gray-500" size={18} />
                  <input 
                    type="text" 
                    placeholder="Search parts..." 
-                   className="bg-black border border-gray-700 rounded-full py-2 pl-10 pr-4 text-white focus:border-red-500 focus:outline-none w-64"
+                   className="bg-black border border-gray-700 rounded-full py-2 pl-10 pr-4 text-white focus:border-red-500 focus:outline-none w-full md:w-64"
                    value={searchTerm}
                    onChange={e => setSearchTerm(e.target.value)}
                  />
@@ -424,9 +434,9 @@ export default function Admin() {
                 <tbody className="divide-y divide-zinc-800">
                   {filteredProducts.map(product => (
                     <tr key={product.id} className="hover:bg-zinc-800/50 transition-colors group">
-                      <td className="p-4">
-                        <div className="font-bold text-white">{product.name}</div>
-                        <div className="text-xs text-gray-500">{product.category}</div>
+                      <td className="p-4 align-top">
+                        <div className="font-bold text-white min-w-[150px] leading-snug">{product.name}</div>
+                        <div className="text-xs text-gray-500 mt-1">{product.category}</div>
                       </td>
                       <td className="p-4 text-sm text-gray-300">
                         {BRANDS.find(b => b.id === product.brand)?.name || product.brand}
@@ -498,7 +508,7 @@ export default function Admin() {
 
                <div className="border-t border-gray-800 pt-6">
                  <h3 className="text-lg font-bold text-white mb-4">Add Items</h3>
-                 <div className="flex gap-2 mb-4">
+                 <div className="flex flex-col md:flex-row gap-2 mb-4">
                    <select 
                       className="w-full bg-black border border-gray-700 rounded p-2 text-white"
                       value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}
@@ -508,11 +518,13 @@ export default function Admin() {
                        <option key={p.id} value={p.id}>{p.name} - ₹{p.price}</option>
                      ))}
                    </select>
-                   <input 
-                      type="number" min="1" value={billQty} onChange={e => setBillQty(e.target.value)}
-                      className="w-20 bg-black border border-gray-700 rounded p-2 text-white"
-                   />
-                   <button onClick={addToBill} className="bg-green-600 text-white px-4 rounded hover:bg-green-700"><Plus /></button>
+                   <div className="flex gap-2">
+                      <input 
+                          type="number" min="1" value={billQty} onChange={e => setBillQty(e.target.value)}
+                          className="w-full md:w-20 bg-black border border-gray-700 rounded p-2 text-white"
+                      />
+                      <button onClick={addToBill} className="bg-green-600 text-white px-4 rounded hover:bg-green-700 flex-shrink-0"><Plus /></button>
+                   </div>
                  </div>
                </div>
             </div>
@@ -526,14 +538,14 @@ export default function Admin() {
                   <p className="text-sm font-bold mt-2">GSTIN: {shopDetails.gstId}</p>
                </div>
 
-               <div className="flex justify-between mb-6">
+               <div className="flex flex-col md:flex-row justify-between mb-6 gap-4">
                  <div>
                    <p className="text-xs text-gray-500 uppercase">Billed To:</p>
                    <p className="font-bold">{billCustomer.name || 'Walk-in Customer'}</p>
                    <p className="text-sm">{billCustomer.phone}</p>
                    <p className="text-sm max-w-[200px]">{billCustomer.address}</p>
                  </div>
-                 <div className="text-right">
+                 <div className="text-left md:text-right">
                    <p className="text-xs text-gray-500 uppercase">Invoice No:</p>
                    <p className="font-bold">INV-{Date.now().toString().slice(-6)}</p>
                    <p className="text-xs text-gray-500 uppercase mt-2">Date:</p>
@@ -563,7 +575,7 @@ export default function Admin() {
                </table>
 
                <div className="flex justify-end">
-                 <div className="w-48 space-y-2">
+                 <div className="w-full md:w-48 space-y-2">
                     <div className="flex justify-between text-sm">
                       <span>Subtotal:</span>
                       <span>₹{billSubtotal.toFixed(2)}</span>
@@ -589,15 +601,14 @@ export default function Admin() {
                </div>
                
                {/* No-Print Actions */}
-               <div className="absolute -top-12 right-0 print:hidden">
-                 <button onClick={() => window.print()} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center gap-2 font-bold shadow-lg">
+               <div className="absolute -top-14 right-0 md:-top-12 print:hidden w-full md:w-auto flex justify-end">
+                 <button onClick={() => window.print()} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center gap-2 font-bold shadow-lg text-sm md:text-base">
                    <Printer size={18} /> Print Bill
                  </button>
                </div>
             </div>
           </div>
         )}
-
       </div>
     </div>
   )
