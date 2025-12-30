@@ -5,29 +5,21 @@ export default function Footer() {
   const { shopDetails } = useProducts()
 
   return (
-    <footer className="bg-black text-white py-12 border-t border-gray-800">
+    <footer className="bg-black text-white py-8 border-t border-gray-800">
       <div className="container mx-auto px-6 text-center md:text-left">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-red-500">DHAIRYA TRACTOR PARTS</h3>
+            <h3 className="text-xl font-bold mb-2 text-red-500">DHAIRYA TRACTOR PARTS</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your one-stop destination for genuine and high-quality aftermarket tractor parts. 
               Serving farmers with pride since 2010.
             </p>
           </div>
+          
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li><a href="#" className="hover:text-white">About Us</a></li>
-              <li><a href="#" className="hover:text-white">Shipping Policy</a></li>
-              <li><a href="#" className="hover:text-white">Returns</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold mb-4">Contact</h3>
-            <p className="text-gray-400 text-sm mb-1">Phone: {shopDetails.phone}</p>
-            <p className="text-gray-400 text-sm mb-1">Email: {shopDetails.email}</p>
-            <p className="text-gray-400 text-sm mb-4">Location: {shopDetails.location}</p>
+            <h3 className="text-xl font-bold mb-4 text-white">Contact Us</h3>
+            <p className="text-white text-base mb-2 font-medium">Phone: {shopDetails.phone}</p>
+            <p className="text-white text-base mb-4 font-medium">Email: {shopDetails.email}</p>
             
             {/* Map Embed */}
             {shopDetails.latitude && shopDetails.longitude && (
@@ -47,7 +39,7 @@ export default function Footer() {
             )}
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-gray-900 text-center text-gray-500 text-xs">
+        <div className="mt-6 pt-4 border-t border-gray-900 text-center text-gray-500 text-xs">
           © {new Date().getFullYear()} Dhairya Tractor Parts. All rights reserved.
         </div>
       </div>
